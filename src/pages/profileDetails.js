@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import { Button } from 'react-bootstrap';
 import '../App.css';
+import Card from 'react-bootstrap/Card';
+
+
 function ProfileDetails(match) {
 
     console.log(match.match.params.id);
@@ -35,8 +39,19 @@ function ProfileDetails(match) {
     console.log("userIndex "+ userIndex);
     console.log("userName "+ userDetails.name[userIndex]);
     return (
-        <div>
-            <h3>User Profile of {userDetails.name[userIndex]}</h3>
+        <div className="profileArea">
+            <Card>
+                <Card.Header>Welcome to {userDetails.name[userIndex]} porfolio</Card.Header>
+                <Card.Body>
+                    <Card.Title>{userDetails.name[userIndex]}</Card.Title>
+                    <Card.Text>Name : {userDetails.name[userIndex]}</Card.Text>
+                    <Card.Text>Description : {userDetails.dscrption[userIndex]}</Card.Text>
+                    <Card.Text>Type : {userDetails.type[userIndex]}</Card.Text>
+                    <Card.Text>Cosmetic Id : {userDetails.costId[userIndex]}</Card.Text>
+                        
+                    <Button variant="primary">Edit Profile</Button>
+                </Card.Body>
+            </Card>
             
         </div>
     );

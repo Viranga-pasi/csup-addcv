@@ -37,10 +37,22 @@
   }
 
 }
+@media only screen and (max-width: 800px) {
+  .link{
+    font-size: 18px;
+  }
+  .dashboardArea{
+    
+    margin-right: 100px;
+    margin-left: 100px;
+    
+  }
+}
 
 .link{
   text-decoration: none;
   color: white;
+  font-size: 20px;
 }
 .link:hover{
   text-decoration: none;
@@ -56,4 +68,15 @@
   padding: 5px 5px 5px 5px;
   background: rgb(232,229,229);
   background: linear-gradient(90deg, rgba(232,229,229,1) 0%, rgba(232,229,229,1) 100%);
+}
+
+.profileArea{
+  border: none;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 150px;
+  padding: 5px 5px 5px 5px;
+  text-align: left;
 }
