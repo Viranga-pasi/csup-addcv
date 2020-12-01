@@ -11,7 +11,7 @@ function Dashboard() {
         const items =  await details.json();
         
         
-        console.log(items.data);
+        
         setData(items.data);
     }
     
