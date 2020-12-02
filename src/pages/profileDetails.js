@@ -2,10 +2,9 @@ import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 import '../App.css';
 import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal'
-import Form from 'react-bootstrap/Form'
+
 function ProfileDetails(match) {
-    const [modalShow, setModalShow] = React.useState(false);
+    
     console.log(match.match.params.id);
     const [data, setData] = useState([]);
 
@@ -40,44 +39,7 @@ function ProfileDetails(match) {
     console.log("userName "+ userDetails.name[userIndex]);
 
     //pop up verical menu
-    function MyVerticallyCenteredModal(props) {
-        return (
-          <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header closeButton>
-              <Modal.Title id="contained-modal-title-vcenter">
-                You need to sign in before edit your profile
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <h4>Sign In</h4>
-                <Form>
-                    <Form.Group controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={props.onHide}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-        );
-      }
+    
 
 
 
@@ -95,13 +57,10 @@ function ProfileDetails(match) {
                     <Card.Text>Type : {userDetails.type[userIndex]}</Card.Text>
                     <Card.Text>Cosmetic Id : {userDetails.costId[userIndex]}</Card.Text>
                         
-                    <Button variant="primary" onClick={() => setModalShow(true)}>Edit Profile</Button>
+                   
                 </Card.Body>
             </Card>
-            <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-      />
+            
         </div>
     );
 }

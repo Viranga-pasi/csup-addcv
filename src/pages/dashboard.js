@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../App.css';
 import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
 function Dashboard() {
     useEffect(()=>{
         fetchData();
@@ -20,23 +21,33 @@ function Dashboard() {
     return (
         <div className="dashboardArea">
             <h1>Dashboard</h1>
-            {/* <Button variant="primary" size="lg" block>
-                Block level button
-            </Button> */}
-            {data.map(d =>(
+           
+            {/* {data.map(d =>(
                  <Button variant="primary" size="lg" block key={d.itemId}>
                     <Link to={`/profile/${d.itemId}`} className="link">
                         {d.item.name}
                     </Link>
                 </Button>
             ))}
-            {/* {data.map(d =>(
-                <h2 key={d.itemId}>
-                    <Link to={`/profile/${d.itemId}`}>
-                        {d.item.name}
-                    </Link>
-                </h2>
-            ))} */}
+            */}
+
+
+           {data.map(d =>(
+                <Card style={{ width: '18rem' }} key={d.itemId}>
+                    <Card.Img variant="top" src={d.item.images.icon} />
+                    <Card.Body>
+                        <Card.Title>{d.item.name}</Card.Title>
+                        <Card.Text>
+                            {d.itemId}
+                        </Card.Text>
+                        <Button variant="primary" size="lg" block key={d.itemId}>
+                            <Link to={`/profile/${d.itemId}`} className="link">
+                                View Profile
+                            </Link>
+                        </Button>
+                    </Card.Body>
+                </Card>
+            ))}
         </div>
     );
 }
