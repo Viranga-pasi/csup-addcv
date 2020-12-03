@@ -16,11 +16,16 @@ function People(props) {
                 {/* <Card.Text>
                     {props.id}
                 </Card.Text> */}
-                <Button variant="primary" size="lg" block>
+                {/* <Button variant="primary" size="lg" block size="sm" className="button">
                     <Link to={props.link} className="link">
                         View Profile
                     </Link>
-                </Button>
+                </Button> */}
+                <button className="button">
+                    <Link to={props.link} className="link" className="link">
+                        View Profile
+                    </Link>
+                </button>
             </Card.Body>
         </Card>
     </div>

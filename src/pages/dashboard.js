@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import People from "../componenets/people";
 import {Col, Row, Container} from 'react-bootstrap'
+import NavSearch from "../componenets/navSearch";
 function Dashboard() {
     useEffect(()=>{
         fetchData();
@@ -19,7 +20,8 @@ function Dashboard() {
     }
     let peopleCard = data.map(d=>{
         return(
-            <Col sm="3"  >
+            
+            <Col sm="3"  className="grid">
                 <People name={d.item.name} id={d.itemId} link={`/profile/${d.itemId}`} img={d.item.images.icon}/>
             </Col>
         );
@@ -29,6 +31,8 @@ function Dashboard() {
     
     
     return (
+        <div>
+            <NavSearch />
         <div className="dashboardArea">
             <h1>Dashboard</h1>
            
@@ -66,7 +70,7 @@ function Dashboard() {
        
     </Container>
             
-        
+        </div>
         </div>
     );
 }
