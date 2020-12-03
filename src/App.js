@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Navigation from "./componenets/navigation";
+import Footer from "./componenets/footer";
 import HomePage from "./pages/homePage";
 import Dashboard from "./pages/dashboard";
 import Profile from "./pages/profile";
@@ -20,7 +20,9 @@ function App() {
           <Route path="/profile" exact component={Profile} />
           <Route path="/profile/:id" component={ProfileDetails} />
         </Switch>
+
       </div>
+     
     </Router>
   );
 }
