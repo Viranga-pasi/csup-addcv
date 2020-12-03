@@ -3,6 +3,8 @@ import '../App.css';
 import {Link} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
+import People from "../componenets/people";
+import {Col, Row, Container} from 'react-bootstrap'
 function Dashboard() {
     useEffect(()=>{
         fetchData();
@@ -15,9 +17,14 @@ function Dashboard() {
         // console.log(items.data);
         setData(items.data);
     }
-   
-
-   
+    let peopleCard = data.map(d=>{
+        return(
+            <Col sm="3">
+                <People name={d.item.name} id={d.itemId} link={`/profile/${d.itemId}`} img={d.item.images.icon}/>
+            </Col>
+        );
+    })
+    
     return (
         <div className="dashboardArea">
             <h1>Dashboard</h1>
@@ -30,11 +37,9 @@ function Dashboard() {
                 </Button>
             ))}
             */}
-
-
-           {data.map(d =>(
-                <Card style={{ width: '18rem' }} key={d.itemId}>
-                    <Card.Img variant="top" src={d.item.images.icon} />
+            {/* {data.map(d =>(
+                <Card style={{ width: '15rem' }} key={d.itemId} >
+                    <Card.Img variant="top" src={d.item.images.icon}  />
                     <Card.Body>
                         <Card.Title>{d.item.name}</Card.Title>
                         <Card.Text>
@@ -47,7 +52,18 @@ function Dashboard() {
                         </Button>
                     </Card.Body>
                 </Card>
+              
             ))}
+     */}
+    <Container fluid>
+        <Row>
+            {peopleCard}
+            
+        </Row>
+       
+    </Container>
+            
+        
         </div>
     );
 }

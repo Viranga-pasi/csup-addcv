@@ -2,11 +2,14 @@ import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 import '../App.css';
 import Card from 'react-bootstrap/Card';
-
+import Container from 'react-bootstrap/Container'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 function ProfileDetails(match) {
     
-    console.log(match.match.params.id);
+    // console.log(match.match.params.id);
     const [data, setData] = useState([]);
+   
 
     useEffect(()=>{
         fetchData();
@@ -22,8 +25,11 @@ function ProfileDetails(match) {
         costId: data.map((d) => d.item.costmeticId),
         dscrption: data.map((d) => d.item.description),
         type: data.map((d) => d.item.type),
+        img: data.map((d)=> d.item.images)
         
     };
+
+   
     const userId = {
         itemId: data.map((d) => d.itemId),
  
@@ -35,20 +41,11 @@ function ProfileDetails(match) {
             userIndex = i;
         }
     }
-    console.log("userIndex "+ userIndex);
-    console.log("userName "+ userDetails.name[userIndex]);
 
-    //pop up verical menu
-    
-
-
-
-
-
-
+ 
     return (
-        <div className="profileArea">
-            <Card>
+        <div>
+            {/* <Card>
                 <Card.Header>Welcome to {userDetails.name[userIndex]} porfolio</Card.Header>
                 <Card.Body>
                     <Card.Title>{userDetails.name[userIndex]}</Card.Title>
@@ -59,7 +56,26 @@ function ProfileDetails(match) {
                         
                    
                 </Card.Body>
-            </Card>
+            </Card> */}
+
+          <Container className="profileArea">
+          <Card.Title>Welcom to {userDetails.name[userIndex]} portfolio</Card.Title>
+            <Row>
+              <Col sm={4}>
+              
+                <Card.Img variant="top" src=""/>
+                <Card.Title>{userDetails.name[userIndex]}</Card.Title>
+
+              </Col>
+              <Col sm={8}> 
+                
+                <Card.Text>Name : {userDetails.name[userIndex]}</Card.Text>
+                <Card.Text>Description : {userDetails.dscrption[userIndex]}</Card.Text>
+                <Card.Text>Type : {userDetails.type[userIndex]}</Card.Text>
+                <Card.Text>Cosmetic Id : {userDetails.costId[userIndex]}</Card.Text></Col>
+              
+            </Row>
+          </Container>
             
         </div>
     );

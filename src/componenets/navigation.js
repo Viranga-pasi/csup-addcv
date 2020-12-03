@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 import logo from '../images/logo.png';
 function Navigation() {
   const [modalShow, setModalShow] = React.useState(false);
+  
   function MyVerticallyCenteredModal(props) {
     return (
       <Modal
@@ -15,7 +16,7 @@ function Navigation() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            You need to sign in before edit your profile
+            Sign IN CSUP WEB
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
