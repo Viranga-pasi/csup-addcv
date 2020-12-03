@@ -19,11 +19,14 @@ function Dashboard() {
     }
     let peopleCard = data.map(d=>{
         return(
-            <Col sm="3">
+            <Col sm="3"  >
                 <People name={d.item.name} id={d.itemId} link={`/profile/${d.itemId}`} img={d.item.images.icon}/>
             </Col>
         );
     })
+    
+
+    
     
     return (
         <div className="dashboardArea">
@@ -56,7 +59,7 @@ function Dashboard() {
             ))}
      */}
     <Container fluid>
-        <Row>
+        <Row >
             {peopleCard}
             
         </Row>

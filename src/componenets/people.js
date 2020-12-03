@@ -9,13 +9,13 @@ function People(props) {
   
   return (
     <div >
-      <Card style={{ width: '15rem' }}>
+      <Card style={{ width: '15rem' }} className="people">
             <Card.Img variant="top" src={props.img} />
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
-                <Card.Text>
+                {/* <Card.Text>
                     {props.id}
-                </Card.Text>
+                </Card.Text> */}
                 <Button variant="primary" size="lg" block>
                     <Link to={props.link} className="link">
                         View Profile

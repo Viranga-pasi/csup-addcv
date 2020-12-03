@@ -47,7 +47,14 @@
     margin-left: 100px;
     
   }
+ 
 }
+@media only screen and (max-width: 1000px) {
+  .people{
+    flex-direction: column;
+  }
+}
+
 
 .link{
   text-decoration: none;
@@ -63,8 +70,8 @@
   border-radius: 10px;
   margin-top: 60px;
   margin-bottom: 100px;
-  margin-right: 300px;
-  margin-left: 300px;
+  margin-right: 250px;
+  margin-left: 250px;
   padding: 5px 5px 5px 5px;
   background: rgb(249,249,249);
   background: linear-gradient(90deg, rgba(249,249,249,1) 0%, rgba(249,249,249,1) 100%);
@@ -91,4 +98,11 @@
   max-height: 100px;
 }
 
+.people{
+  margin: 5px;
+}
+
+.people:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
