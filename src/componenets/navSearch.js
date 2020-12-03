@@ -2,8 +2,10 @@ import React from 'react';
 import {Navbar, Nav, Button} from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
 import logo from '../images/logo.png';
-function Navigation() {
+
+function NavSearch() {
   const [modalShow, setModalShow] = React.useState(false);
   
   function MyVerticallyCenteredModal(props) {
@@ -47,32 +49,36 @@ function Navigation() {
   return (
     <div>
 
-      <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-        <Navbar.Brand href="/">
-          <img
-            alt=""
-            src={logo}
-            width="50"
-            height="40"
-            className="d-inline-block align-top"
-          />{' '}
-          CSUP WEB
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-        <Button inline variant="outline-primary" onClick={() => setModalShow(true)}>Sign In</Button>
-      </Navbar>
-      <MyVerticallyCenteredModal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-      />
+        <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+            <Navbar.Brand href="/">
+                <img
+                    alt=""
+                    src={logo}
+                    width="50"
+                    height="40"
+                    className="d-inline-block align-top"
+                />{' '}
+                CSUP WEB
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+            <Form inline className="form">
+                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <Button variant="outline-success">Search</Button>
+            </Form>
+            <Button inline variant="outline-primary" onClick={() => setModalShow(true)}>Sign In</Button>
+        </Navbar>
+        <MyVerticallyCenteredModal
+                    show={modalShow}
+                    onHide={() => setModalShow(false)}
+        />
   </div>
   );
 }
 
-export default Navigation;
+export default NavSearch;

@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Navigation from "../componenets/navigation";
 function ProfileDetails(match) {
     
     // console.log(match.match.params.id);
@@ -45,6 +46,7 @@ function ProfileDetails(match) {
  
     return (
         <div>
+            <Navigation/>
             {/* <Card>
                 <Card.Header>Welcome to {userDetails.name[userIndex]} porfolio</Card.Header>
                 <Card.Body>
@@ -64,15 +66,31 @@ function ProfileDetails(match) {
               <Col sm={4}>
               
                 <Card.Img variant="top" src=""/>
-                <Card.Title>{userDetails.name[userIndex]}</Card.Title>
-
+                <h2>{userDetails.name[userIndex]}</h2>
+                <div className="container">
+                    <div className="row">
+                    <Card.Text>Connect with me</Card.Text>
+                    <div>
+                        <ul className="social-network social-circle">
+                        <li><a href="#" className="github" title="Github"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#" className="icoFacebook" title="Facebook"><i className="fa fa-facebook"></i></a></li>
+                        <li><a href="#" className="icoTwitter" title="Twitter"><i className="fa fa-twitter"></i></a></li>
+                        <li><a href="#" className="icoGoogle" title="Google +"><i class="fa fa-envelope"></i></a></li>
+                        <li><a href="#" className="icoLinkedin" title="Linkedin"><i className="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
               </Col>
               <Col sm={8}> 
-                
-                <Card.Text>Name : {userDetails.name[userIndex]}</Card.Text>
-                <Card.Text>Description : {userDetails.dscrption[userIndex]}</Card.Text>
-                <Card.Text>Type : {userDetails.type[userIndex]}</Card.Text>
-                <Card.Text>Cosmetic Id : {userDetails.costId[userIndex]}</Card.Text></Col>
+                <h5>Name</h5>
+                <Card.Text>{userDetails.name[userIndex]}</Card.Text>
+                <h5>Description</h5>
+                <Card.Text>{userDetails.dscrption[userIndex]}</Card.Text>
+                <h5>Type</h5>
+                <Card.Text>{userDetails.type[userIndex]}</Card.Text>
+                <h5>Cosmetic Id</h5>
+                <Card.Text>{userDetails.costId[userIndex]}</Card.Text></Col>
               
             </Row>
           </Container>
