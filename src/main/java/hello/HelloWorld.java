@@ -5,6 +5,3 @@ public class HelloWorld {
     System.out.println("Hello World");
   }
 }
-
-
-// https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/security#code-commands
