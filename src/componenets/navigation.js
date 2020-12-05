@@ -17,7 +17,7 @@ function Navigation() {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Sign IN CSUP WEB
+            Sign In to CSUP WEB
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
