@@ -6,6 +6,8 @@ import FormControl from 'react-bootstrap/FormControl'
 import logo from '../images/logo.png';
 
 function NavSearch() {
+
+  
   const [modalShow, setModalShow] = React.useState(false);
   
   function MyVerticallyCenteredModal(props) {
@@ -68,14 +70,16 @@ function NavSearch() {
                 </Nav>
             </Navbar.Collapse>
             <Form inline className="form">
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
+                <FormControl type="text" placeholder="Search"  className="mr-sm-2"/>
+                <Button variant="success">Search</Button>
+             
             </Form>
-            <Button inline variant="outline-primary" onClick={() => setModalShow(true)}>Sign In</Button>
+            <Button inline  variant="primary" onClick={() => setModalShow(true)}>Sign In</Button>
+           
         </Navbar>
         <MyVerticallyCenteredModal
-                    show={modalShow}
-                    onHide={() => setModalShow(false)}
+          show={modalShow}
+          onHide={() => setModalShow(false)}
         />
   </div>
   );

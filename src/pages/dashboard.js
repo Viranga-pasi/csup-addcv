@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../App.css';
-import {Link} from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card'
+
 import People from "../componenets/people";
 import {Col, Row, Container} from 'react-bootstrap'
 import NavSearch from "../componenets/navSearch";
@@ -21,7 +19,7 @@ function Dashboard() {
     let peopleCard = data.map(d=>{
         return(
             
-            <Col sm="3"  className="grid">
+            <Col sm="2"  bsPrefix ="grid" key={d.itemId}>
                 <People name={d.item.name} id={d.itemId} link={`/profile/${d.itemId}`} img={d.item.images.icon}/>
             </Col>
         );
@@ -62,8 +60,8 @@ function Dashboard() {
               
             ))}
      */}
-    <Container fluid>
-        <Row >
+    <Container fluid bsPrefix="profileShow">
+        <Row>
             {peopleCard}
             
         </Row>

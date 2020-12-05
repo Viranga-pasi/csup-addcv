@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 import {Navbar, Nav, Button} from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
@@ -48,6 +49,7 @@ function Navigation() {
     <div>
 
       <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
+        
         <Navbar.Brand href="/">
           <img
             alt=""
@@ -65,7 +67,8 @@ function Navigation() {
             <Nav.Link href="/dashboard">Dashboard</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button inline variant="outline-primary" onClick={() => setModalShow(true)}>Sign In</Button>
+        <Button inline  variant="primary" onClick={() => setModalShow(true)}>Sign In</Button>
+        
       </Navbar>
       <MyVerticallyCenteredModal
         show={modalShow}

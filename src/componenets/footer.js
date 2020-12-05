@@ -1,9 +1,6 @@
 import React from 'react';
-import {Navbar, Nav, Button} from 'react-bootstrap'
-import Modal from 'react-bootstrap/Modal'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import logo from '../images/logo.png';
+import {Navbar} from 'react-bootstrap'
+
 
 function Footer() {
   

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import Footer from "./componenets/footer";
 import HomePage from "./pages/homePage";
