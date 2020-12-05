@@ -64,10 +64,10 @@ function NavSearch() {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-                </Nav>
+              <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+              </Nav>
             </Navbar.Collapse>
             <Form inline className="form">
                 <FormControl type="text" placeholder="Search"  className="mr-sm-2"/>
