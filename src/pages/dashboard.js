@@ -19,7 +19,7 @@ function Dashboard() {
     let peopleCard = data.map(d=>{
         return(
             
-            <Col sm="2"  bsPrefix ="grid" key={d.itemId}>
+            <Col sm="2" bsPrefix ="grid" key={d.itemId}>
                 <People name={d.item.name} id={d.itemId} link={`/profile/${d.itemId}`} img={d.item.images.icon}/>
             </Col>
         );

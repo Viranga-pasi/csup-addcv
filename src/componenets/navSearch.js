@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import {Navbar, Nav, Button} from 'react-bootstrap'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
@@ -8,6 +8,18 @@ import logo from '../images/logo.png';
 function NavSearch() {
 
   
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    console.log("Form selectred");
+
+    setValidated(true);
+  };
   const [modalShow, setModalShow] = React.useState(false);
   
   function MyVerticallyCenteredModal(props) {
@@ -69,7 +81,7 @@ function NavSearch() {
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
               </Nav>
             </Navbar.Collapse>
-            <Form inline className="form">
+            <Form inline className="form" noValidate validated={validated} onSubmit={handleSubmit}>
                 <FormControl type="text" placeholder="Search"  className="mr-sm-2"/>
                 <Button variant="success">Search</Button>
              
