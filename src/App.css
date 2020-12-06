@@ -64,9 +64,9 @@
   padding: 5px;
 }
 .grid{
-  margin: 5px;
+  
   display: flex;
-  justify-content:space-between; 
+   
 }
 .dash{
   display: inline;
@@ -94,12 +94,14 @@
 
 .people{
 
-  margin:5px;
+  margin-left: 7px;
+  margin-left: 7px;
+  margin-top: 10px;
   transition: box-shadow .3s;
   background: white;
   border-radius: 10px;
   width: 200px;
-  height: 325px;
+  height: auto;
 }
 
 .people:hover{
