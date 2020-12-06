@@ -4,62 +4,11 @@ import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import logo from '../images/logo.png';
-
+import { useForm } from "react-hook-form";
+import Signin from "./signin";
+import Search from "./search";
 function NavSearch() {
 
-  
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    console.log("Form selectred");
-
-    setValidated(true);
-  };
-  const [modalShow, setModalShow] = React.useState(false);
-  
-  function MyVerticallyCenteredModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Sign In to CSUP WEB
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Sign In</h4>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
-                </Form.Group>
-
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
   return (
     <div>
 
@@ -81,18 +30,10 @@ function NavSearch() {
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
               </Nav>
             </Navbar.Collapse>
-            <Form inline className="form" noValidate validated={validated} onSubmit={handleSubmit}>
-                <FormControl type="text" placeholder="Search"  className="mr-sm-2"/>
-                <Button variant="success">Search</Button>
-             
-            </Form>
-            <Button inline  variant="primary" onClick={() => setModalShow(true)}>Sign In</Button>
-           
+            <Search/>
+           <Signin/>
         </Navbar>
-        <MyVerticallyCenteredModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-        />
+       
   </div>
   );
 }
