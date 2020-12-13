@@ -6,21 +6,27 @@ import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Navigation from "../componenets/navigation";
+import { fetchData } from "../api/api";
 function ProfileDetails(match) {
     
     // console.log(match.match.params.id);
     const [data, setData] = useState([]);
-   
-
-    useEffect(()=>{
-        fetchData();
+    
+    useEffect(async () => {
+        const fetchedData = await fetchData();
+        setData(fetchedData.data);
     },[]);
-    const fetchData = async () => {
-        const details = await fetch('https://fortnite-api.theapinetwork.com/upcoming/get');
-        const items =  await details.json();
-        // console.log(items.data);
-        setData(items.data);
-    }
+
+
+    // useEffect(()=>{
+    //     fetchData();
+    // },[]);
+    // const fetchData = async () => {
+    //     const details = await fetch('https://fortnite-api.theapinetwork.com/upcoming/get');
+    //     const items =  await details.json();
+    //     // console.log(items.data);
+    //     setData(items.data);
+    // }
     const userDetails = {
         name: data.map((d) => d.item.name),
         costId: data.map((d) => d.item.costmeticId),

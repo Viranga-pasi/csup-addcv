@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
-import {Navbar, Nav, Button} from 'react-bootstrap'
-import Modal from 'react-bootstrap/Modal'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
+import React from "react";
+import {Navbar, Nav} from 'react-bootstrap'
 import logo from '../images/logo.png';
-import { useForm } from "react-hook-form";
-import Signin from "./signin";
-import Search from "./search";
+import Login from "./login";
+import Search from "./searchbar";
 function NavSearch() {
 
   return (
@@ -31,7 +27,7 @@ function NavSearch() {
               </Nav>
             </Navbar.Collapse>
             <Search/>
-           <Signin/>
+           <Login/>
         </Navbar>
        
   </div>
