@@ -10,7 +10,7 @@ function HomePage() {
     <div>
       <div className="profileArea">
 
-        <Navigation/>
+        {/* <Navigation/> */}
         <h1>Home Page</h1>
       </div>
     </div>

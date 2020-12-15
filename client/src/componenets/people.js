@@ -10,7 +10,7 @@ function People(props) {
   return (
     <div >
       <Card bsPrefix="people" border="light">
-            {/* <Card.Img variant="top" src={props.img} /> */}
+            
             <Image src={props.img} roundedCircle style={{width: 175, height: 'auto', margin:5}}/>
             <Card.Body>
                 <h6>{props.name}</h6>

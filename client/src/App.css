@@ -47,12 +47,14 @@
 
 .link{
   text-decoration: none;
-  color: white;
-  font-size: 20px;
+  color: rgb(224, 224, 224);
+
+  margin: 15px;
+  font-size: 16px;
 }
 .link:hover{
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .dashboardArea{
   border: none;
@@ -139,10 +141,7 @@
   display: flex;
 
 }
-.link{
-  margin: 15px;
-  font-size: 16px;
-}
+
 .form{
   margin-right: 5px;
 }

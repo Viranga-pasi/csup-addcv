@@ -52,7 +52,7 @@ function ProfileDetails(match) {
  
     return (
         <div>
-            <Navigation/>
+            {/* <Navigation/> */}
             
 
             <Container className="profileArea">
