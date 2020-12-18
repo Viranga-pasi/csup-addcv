@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.services.dto.StudentDTO;
 
 @RestController
-@RequestMapping(value = "/app")
+@RequestMapping(value = "/api")
 public class StudentController {
 	
 	@PostMapping(value = "")
