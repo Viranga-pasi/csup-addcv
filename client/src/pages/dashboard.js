@@ -6,9 +6,7 @@ import {Col, Row, Container} from 'react-bootstrap'
 import NavSearch from "../componenets/navSearch";
 import { fetchData } from "../api/api";
 function Dashboard() {
-    // useEffect(()=>{
-    //     fetchApi();
-    // },[]);
+   
     const [data, setData] = useState([]);
    
     useEffect(async () => {
@@ -17,12 +15,7 @@ function Dashboard() {
     },[]);
 
    
-    // const fetchApi = async () => {
-    //     const details = await fetch('https://fortnite-api.theapinetwork.com/upcoming/get');
-    //     const items =  await details.json();
-    //     // console.log(items.data);
-    //     setData(items.data);
-    // }
+  
     let peopleCard = data.map(d=>{
         return(
             
@@ -35,7 +28,7 @@ function Dashboard() {
     
     return (
         <div>
-            <NavSearch />
+            {/* <NavSearch /> */}
         <div className="dashboardArea">
             <h1>Dashboard</h1>
            
