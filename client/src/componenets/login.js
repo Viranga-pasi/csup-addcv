@@ -36,9 +36,11 @@ function Login() {
             {/* Form here */}
 
               <Form onSubmit={handleSubmit(onSubmit)}>
+            
                   <Form.Group controlId="formBasicEmail">
                       <Form.Label>Email address</Form.Label>
                       <Form.Control type="email" placeholder="Enter email" ref={register} name="email" />
+                      
                       <Form.Text className="text-muted">
                       </Form.Text>
                   </Form.Group>
@@ -46,6 +48,7 @@ function Login() {
                   <Form.Group controlId="formBasicPassword">
                       <Form.Label>Password</Form.Label>
                       <Form.Control type="password" placeholder="Password" ref={register} name="password" />
+                      
                   </Form.Group>
                   <Button variant="primary" type="submit">
                       Submit
