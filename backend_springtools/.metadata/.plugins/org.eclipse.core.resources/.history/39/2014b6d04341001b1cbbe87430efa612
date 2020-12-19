@@ -1,0 +1,7 @@
+package com.example.demo.repository;
+
+public interface FileDBRepository extends JpaRepository<FileDB , String> {
+
+	
+	
+}

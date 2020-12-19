@@ -1,0 +1,9 @@
+
+
+spring.datasource.url=jdbc:sqlserver://csupdb.database.windows.net:1433;database=csup;user=navindu@csupdb;password=CS@12345;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+
+spring.datasource.username= navindu@csupdb
+spring.datasource.password= CS@12345
+
+# Hibernate ddl auto (create, create-drop, validate, update)
+spring.jpa.hibernate.ddl-auto= update

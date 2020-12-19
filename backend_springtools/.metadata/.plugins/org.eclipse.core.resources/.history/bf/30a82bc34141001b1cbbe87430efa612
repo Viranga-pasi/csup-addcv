@@ -1,0 +1,10 @@
+package com.example.demo.model;
+
+@Entity
+@Table(name = "files")
+public class FileDB {
+
+	
+	
+	
+}

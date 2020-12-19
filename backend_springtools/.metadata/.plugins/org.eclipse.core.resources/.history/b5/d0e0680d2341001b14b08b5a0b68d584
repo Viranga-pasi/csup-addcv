@@ -1,0 +1,20 @@
+package com.example.demo.services.dto;
+
+public class StudentDTO {
+
+	
+	private String name;
+	private String address;
+	
+	
+	public StudentDTO(String name, String address) {
+		this.name = name;
+		this.address = address;
+	}
+	
+	
+	
+	
+	
+	
+}

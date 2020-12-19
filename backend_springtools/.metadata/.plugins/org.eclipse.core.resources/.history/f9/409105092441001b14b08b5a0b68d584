@@ -1,0 +1,17 @@
+package com.example.demo.entity;
+
+import javax.persistence.Column.*;
+
+
+@Entity
+@Table(name = "students")
+public class Student {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "stu_id")
+	private Long id;
+	
+	
+	
+}

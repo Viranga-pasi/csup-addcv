@@ -1,0 +1,9 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+@CrossOrigin("http://localhost:8081")
+public class FileController {
+
+}
