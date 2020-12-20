@@ -17,7 +17,7 @@ function People(props) {
                 
                 
                 <button className="button">
-                    <Link to={props.link} className="link">
+                    <Link to={props.link} className="buttonLink">
                         View Profile
                     </Link>
                 </button>
