@@ -50,16 +50,14 @@ function Login({location}) {
                validate = 10;
             }
         }
+        alert("Invalid userName or Password..!!");
     }
 
-    if(validate === 10){
-        alert("INvalid authntication");
-    }
-
+   
   return (
     <div className="dashboardArea">
       
-      <Form onSubmit={(e)=>handleSubmit(e)}>
+      <Form onSubmit={(e)=>handleSubmit(e)} className = "loginArea">
             
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -77,6 +75,15 @@ function Login({location}) {
             <Button variant="primary" type="submit">
                 Submit
             </Button>
+
+
+
+
+
+
+            
+              
+
         </Form>
 
     </div>
