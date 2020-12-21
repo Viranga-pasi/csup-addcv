@@ -7,9 +7,14 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Navigation from "../componenets/navigation";
 import { fetchData } from "../api/api";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+import {Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+
 function ProfileDetails(match) {
+    const user = useSelector(selectUser);
     
-    // console.log(match.match.params.id);
     const [data, setData] = useState([]);
     
     useEffect(async () => {
@@ -17,16 +22,12 @@ function ProfileDetails(match) {
         setData(fetchedData.data);
     },[]);
 
-
-    // useEffect(()=>{
-    //     fetchData();
-    // },[]);
-    // const fetchData = async () => {
-    //     const details = await fetch('https://fortnite-api.theapinetwork.com/upcoming/get');
-    //     const items =  await details.json();
-    //     // console.log(items.data);
-    //     setData(items.data);
-    // }
+    function ciEquals(a, b) {
+        return typeof a === 'string' && typeof b === 'string'
+            ? a.localeCompare(b, undefined, { sensitivity: 'accent' }) === 0
+            : a === b;
+    }
+    
     const userDetails = {
         name: data.map((d) => d.item.name),
         costId: data.map((d) => d.item.costmeticId),
@@ -98,6 +99,9 @@ function ProfileDetails(match) {
                             <Card.Text>{userDetails.type[userIndex]}</Card.Text>
                             <h5>Cosmetic Id</h5>
                             <Card.Text>{userDetails.costId[userIndex]}</Card.Text>
+
+                            {ciEquals(user.name, userDetails.name[userIndex]) ? <Button variant="success" type="submit" ><Link to={"/login"} className="buttonLink">Add CV</Link></Button>: <p></p>}
+
                         </Card.Body>
                     </Card>
                 </Col>

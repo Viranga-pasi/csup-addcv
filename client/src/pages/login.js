@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import Alert from 'react-bootstrap/Alert'
+
 import {Button} from 'react-bootstrap'
 import {login} from "../features/userSlice"
 import Form from 'react-bootstrap/Form'
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { fetchData } from "../api/api";
-
 function Login({location}) {
   
     const history = useHistory();
@@ -51,8 +50,11 @@ function Login({location}) {
             }
         }
         alert("Invalid userName or Password..!!");
+       
     }
 
+  
+    
    
   return (
     <div className="dashboardArea">
@@ -72,6 +74,7 @@ function Login({location}) {
                 <Form.Control type="password" placeholder="Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 
             </Form.Group>
+            
             <Button variant="primary" type="submit">
                 Submit
             </Button>
