@@ -57,7 +57,7 @@ function ProfileDetails(match) {
 
             <Container className="profileArea">
             <Card className="profilePicArea" border="light">
-                 <Card.Title>Welcom to {userDetails.name[userIndex]} portfolio</Card.Title> 
+                 <Card.Title>Welcome to {userDetails.name[userIndex]} portfolio</Card.Title> 
             </Card>
           
             <Row>
