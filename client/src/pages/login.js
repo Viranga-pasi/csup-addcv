@@ -78,15 +78,6 @@ function Login({location}) {
             <Button variant="primary" type="submit">
                 Submit
             </Button>
-
-
-
-
-
-
-            
-              
-
         </Form>
 
     </div>

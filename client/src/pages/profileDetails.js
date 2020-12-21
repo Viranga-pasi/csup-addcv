@@ -5,21 +5,22 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import Navigation from "../componenets/navigation";
+
 import { fetchData } from "../api/api";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
-import {Button} from 'react-bootstrap'
+import {Button, Image} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-
+import logo from '../images/fieldvisit.jpg';
 function ProfileDetails(match) {
     const user = useSelector(selectUser);
-    
+   
     const [data, setData] = useState([]);
-    
+ 
     useEffect(async () => {
         const fetchedData = await fetchData();
         setData(fetchedData.data);
+       
     },[]);
 
     function ciEquals(a, b) {
@@ -27,7 +28,22 @@ function ProfileDetails(match) {
             ? a.localeCompare(b, undefined, { sensitivity: 'accent' }) === 0
             : a === b;
     }
-    
+
+    function checkUser(){
+        if(!user){
+            return false;
+        }
+        else{
+            if(ciEquals(user.name, userDetails.name[userIndex])){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+
+
     const userDetails = {
         name: data.map((d) => d.item.name),
         costId: data.map((d) => d.item.costmeticId),
@@ -49,11 +65,11 @@ function ProfileDetails(match) {
             userIndex = i;
         }
     }
-
+    
  
     return (
         <div>
-            {/* <Navigation/> */}
+           
             
 
             <Container className="profileArea">
@@ -64,7 +80,8 @@ function ProfileDetails(match) {
             <Row>
                 <Col sm={4}>
                 <Card className="profilePicArea" border="light">
-                    <Card.Img variant="top" src=""/>
+                    <Card.Img variant="top" src={logo} roundedCircle/>
+                    
                     <Card.Body>
                         <Card.Title>{userDetails.name[userIndex]}</Card.Title>
                     <div className="container">
@@ -100,7 +117,7 @@ function ProfileDetails(match) {
                             <h5>Cosmetic Id</h5>
                             <Card.Text>{userDetails.costId[userIndex]}</Card.Text>
 
-                            {ciEquals(user.name, userDetails.name[userIndex]) ? <Button variant="success" type="submit" >Add CV</Button>: <p></p>}
+                            {checkUser() ? <Button variant="success" type="submit" >Add CV</Button>: <p></p>}
 
                         </Card.Body>
                     </Card>
