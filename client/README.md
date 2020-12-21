@@ -1,3 +1,12 @@
+### After clone this project, please install these depedencies
+
+npm install
+npm install react-bootstrap bootstrap
+npm install react-redux
+npm install @reduxjs/toolkit
+npm install --save react-router-dom
+npm install axios
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
