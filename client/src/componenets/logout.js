@@ -20,7 +20,7 @@ function Logout() {
     return (
         <div >
 
-            <Button variant="primary" type="submit" onClick={(e) => handleLogOut(e)}><i className="fas fa-sign-out-alt"></i> Logout</Button>
+            <Button variant="primary" type="submit" onClick={(e) => handleLogOut(e)}><i className="fas fa-sign-out-alt"></i></Button>
         </div>
     );
 }

@@ -100,7 +100,7 @@ function ProfileDetails(match) {
                             <h5>Cosmetic Id</h5>
                             <Card.Text>{userDetails.costId[userIndex]}</Card.Text>
 
-                            {ciEquals(user.name, userDetails.name[userIndex]) ? <Button variant="success" type="submit" ><Link to={"/login"} className="buttonLink">Add CV</Link></Button>: <p></p>}
+                            {ciEquals(user.name, userDetails.name[userIndex]) ? <Button variant="success" type="submit" >Add CV</Button>: <p></p>}
 
                         </Card.Body>
                     </Card>

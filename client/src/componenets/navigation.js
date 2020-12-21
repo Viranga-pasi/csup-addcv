@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
 import logo from '../images/logo1.png';
@@ -39,14 +39,13 @@ function Navigation(props) {
             
             <Nav.Link><Link to={"/"} className="link">Home</Link></Nav.Link>
             <Nav.Link><Link to={"/dashboard"} className="link">Dashboard</Link></Nav.Link>
-            {/* <Nav.Link><Link to={"/login"} className="link">Login</Link></Nav.Link> */}
+           
           </Nav>
         </Navbar.Collapse>
 
-        {/* <div>
-          {props.user ? <Nav style={{color : "white", padding : 5}}><Nav><i className="fas fa-user"></i></Nav>{props.user.name}</Nav> : <Nav></Nav>}
-
-        </div>         */}
+         
+          {props.user ? <Navbar.Text style={{color : "white", padding : 5}}><i className="fas fa-user"></i>{" "}{props.user.name}</Navbar.Text> : <p></p>}
+              
 
 
         <div>
