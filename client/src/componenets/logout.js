@@ -13,14 +13,12 @@ function Logout() {
     const handleLogOut = (e) =>{
         e.preventDefault();
         dispatch(logout());
-        
-
     }
     
     return (
         <div >
 
-            <Button variant="primary" type="submit" onClick={(e) => handleLogOut(e)}><i className="fas fa-sign-out-alt"></i> Logout</Button>
+            <Button variant="primary" type="submit" onClick={(e) => handleLogOut(e)}>Logout</Button>
         </div>
     );
 }

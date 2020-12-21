@@ -3,18 +3,23 @@ import '../App.css';
 import {Navbar, Nav} from 'react-bootstrap'
 import {Button} from 'react-bootstrap'
 
-import logo from '../images/logo1.png';
+import logo from '../images/logo.png';
 // import Login from "./login";
-
+import Login from "../pages/login";
 import Logout from "./logout";
 
 import { Link } from 'react-router-dom';
-
+import { logout } from '../features/userSlice';
 
 
 function Navigation(props) {
   
-  
+  if(!props.user){
+    console.log("User not here");
+  }
+  else{
+    console.log("user here");
+  }
   
   
   return (
@@ -42,16 +47,12 @@ function Navigation(props) {
             {/* <Nav.Link><Link to={"/login"} className="link">Login</Link></Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
-
-        {/* <div>
-          {props.user ? <Nav style={{color : "white", padding : 5}}><Nav><i className="fas fa-user"></i></Nav>{props.user.name}</Nav> : <Nav></Nav>}
-
-        </div>         */}
-
-
+      
         <div>
-          {props.user ? <Logout/> :<Button variant="primary" type="submit" ><Link to={"/login"} className="buttonLink"><i className="fas fa-sign-in-alt"></i> Login</Link></Button> }
-         
+
+          {props.user ? <Logout/> :<Button variant="primary" type="submit" ><Link to={"/login"} className="link">Login</Link></Button> }
+          {/* <Button variant="primary" type="submit" ><Link to={"/login"} className="link">Login</Link></Button>  */}
+          {/* <Login/> */}
         </div> 
       </Navbar>
      
