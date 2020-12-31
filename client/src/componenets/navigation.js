@@ -49,7 +49,7 @@ function Navigation(props) {
 
 
         <div>
-          {props.user ? <Logout/> :<Button variant="primary" type="submit" ><Link to={"/login"} className="buttonLink"><i className="fas fa-sign-in-alt"></i> Login</Link></Button> }
+          {props.user ? <Logout/> :<Button variant="primary" type="submit" ><Link to={"/login"} className="buttonLink"><i className="fas fa-sign-in-alt"></i> LOGIN</Link></Button> }
          
         </div> 
       </Navbar>

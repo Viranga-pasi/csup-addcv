@@ -16,7 +16,8 @@ function App() {
 
   const user = useSelector(selectUser);
 
-  
+  console.log(localStorage.getItem('user'));
+
   return (
     <Router>
       <div className="App">

@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
-
+import './style/login.css';
 import {Button} from 'react-bootstrap'
 import {login} from "../features/userSlice"
 import Form from 'react-bootstrap/Form'
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { fetchData } from "../api/api";
+import { ReactComponent as Login_img } from '../images/login_img.svg';
 function Login({location}) {
   
     const history = useHistory();
@@ -57,9 +58,9 @@ function Login({location}) {
     
    
   return (
-    <div className="dashboardArea">
+    <div>
       
-      <Form onSubmit={(e)=>handleSubmit(e)} className = "loginArea">
+      {/* <Form onSubmit={(e)=>handleSubmit(e)} className = "loginArea">
             
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -78,9 +79,42 @@ function Login({location}) {
             <Button variant="primary" type="submit">
                 Submit
             </Button>
-        </Form>
+        </Form> */}
+        <div className="workArea">
+            <div className="forms-workArea">
+                <div className="signin-signup">
 
+                    <form onSubmit={(e)=>handleSubmit(e)} className="sign-in-form"> 
+                    <h2 className="title">SIGN IN</h2>
+                    
+                    <div className="input-field">
+                        <i className="fas fa-user"></i>
+                        <input type="name" placeholder="Enter Name" name="name" value={name} onChange={(e) => setName(e.target.value)}  />
+                    </div>
+
+                    <div className="input-field">
+                        <i className="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <Button variant="primary" type="submit">
+                        LOGIN
+                    </Button>
+                    
+                    
+                    </form>
+                </div>
+                <div className="panels-workArea">
+                    <div className="panel left-panel">
+                    
+                        <Login_img className="image"/>
+            
+                </div>
+
+            </div>
+        </div>
+        </div>
     </div>
   );
 }
+
 export default Login;

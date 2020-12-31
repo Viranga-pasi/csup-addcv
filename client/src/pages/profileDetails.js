@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import {Button, Image} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import logo from '../images/fieldvisit.jpg';
+import logo from '../images/avatar.png';
 function ProfileDetails(match) {
     const user = useSelector(selectUser);
    
@@ -84,7 +84,7 @@ function ProfileDetails(match) {
                     
                     <Card.Body>
                         <Card.Title>{userDetails.name[userIndex]}</Card.Title>
-                    <div className="container">
+                    
                         <div className="row">
                             <Card.Text>Connect with me</Card.Text>
                             <div>
@@ -97,7 +97,7 @@ function ProfileDetails(match) {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                   
                
                         
                     </Card.Body>
