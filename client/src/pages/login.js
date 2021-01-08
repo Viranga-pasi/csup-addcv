@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import './style/login.css';
 import {Button} from 'react-bootstrap'
 import {login} from "../features/userSlice"
-import Form from 'react-bootstrap/Form'
 import { useDispatch } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import { fetchData } from "../api/api";
@@ -108,10 +107,10 @@ function Login({location}) {
                     
                         <Login_img className="image"/>
             
-                </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
         </div>
     </div>
   );

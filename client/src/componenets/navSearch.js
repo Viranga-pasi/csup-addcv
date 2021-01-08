@@ -1,7 +1,6 @@
 import React from "react";
 import {Navbar, Nav} from 'react-bootstrap'
 import logo from '../images/logo.png';
-import Login from "./login";
 import Search from "./searchbar";
 import { Link } from 'react-router-dom';
 function NavSearch() {
@@ -28,7 +27,7 @@ function NavSearch() {
               </Nav>
             </Navbar.Collapse>
             <Search/>
-           <Login/>
+           
         </Navbar>
        
   </div>

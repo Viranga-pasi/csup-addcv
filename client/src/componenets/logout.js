@@ -1,5 +1,4 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
 import {Button} from 'react-bootstrap'
 
 import { useDispatch } from 'react-redux';
@@ -18,9 +17,9 @@ function Logout() {
     }
     
     return (
-        <div >
+        <div>
 
-            <Button variant="outline-primary" type="submit" size="sm" onClick={(e) => handleLogOut(e)}><i className="fas fa-sign-out-alt"></i></Button>
+            <Button variant="outline-primary" type="submit" size="sm" onClick={(e) => handleLogOut(e)}><i className="fas fa-sign-out-alt"></i> Logout</Button>
         </div>
     );
 }

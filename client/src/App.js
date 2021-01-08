@@ -16,8 +16,6 @@ function App() {
 
   const user = useSelector(selectUser);
 
-  console.log(localStorage.getItem('user'));
-
   return (
     <Router>
       <div className="App">
@@ -27,7 +25,7 @@ function App() {
           <Route path="/" exact component={HomePage} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/login" component={Login} />
-          <Route path="/profile" exact component={Profile} />
+          {/* <Route path="/profile/:id/edit" exact component={Profile} /> */}
           <Route path="/profile/:id" component={ProfileDetails} />
         </Switch>
 
